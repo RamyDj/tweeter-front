@@ -1,0 +1,41 @@
+.body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.tweetInput{
+    background-color: transparent;
+    color : white;
+    border : 0;
+    border-bottom: 1px solid rgb(63	70	80	);
+    width: 80%;
+    font-size: 150%;
+    padding-bottom: 2%;
+}
+
+.postInfosContainer{
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 2%;
+}
+
+.characterCount{
+    color : white;
+    padding-right: 2%;
+    font-size: 80%;
+}
+
+.tweetButton{
+    color : white;
+    background-color: rgb(80	147	222	);
+    border : 0;
+    border-radius: 2vw;
+    padding: 1% 2%;
+}
