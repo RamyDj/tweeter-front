@@ -25,7 +25,7 @@ return(
             <Tweet />
         </div>
         <div className={styles.lastTweetsContainer}>
-
+        <LastTweets />
         </div>
     </div>
     <div className={styles.rightContainer}>
