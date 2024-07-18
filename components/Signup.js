@@ -32,7 +32,7 @@ function SignUp(props) {
                     setSignUpFirstName('')
                     setSignUpPassword('')
                     setSignUpUsername('')
-                    router.push("/tweet")
+                    router.push("/home")
                 }
             })
 

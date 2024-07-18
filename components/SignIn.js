@@ -26,7 +26,7 @@ function SignIn(props) {
                     dispatch(login({ username: signInUsername, token: data.token, firstname: data.firstname }))
                     setSignInUsername('');
                     setSignInPassword('');
-                    router.push("/tweet")
+                    router.push("/home")
                 }
             })
     }

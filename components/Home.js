@@ -2,10 +2,20 @@ import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 import Tweet from './Tweet'
 import LastTweets from './LastTweets'
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 function Home (){
-
+    const [tweets, setTweets] = useState([]);
+    
+    useEffect(() => {
+        fetch('http://localhost:3000/tweet')
+            .then(response => response.json())
+            .then(data => {
+                setTweets(data); 
+            })
+    }, []);
 
 return(    
 <div className={styles.body}>
@@ -26,7 +36,9 @@ return(
             <Tweet />
         </div>
         <div className={styles.lastTweetsContainer}>
-        <LastTweets />
+        <ul>
+              
+            </ul>
         </div>
     </div>
     <div className={styles.rightContainer}>
