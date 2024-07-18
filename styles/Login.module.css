@@ -3,6 +3,7 @@
   flex-direction: row;
   background-color: #151D26;
   color: white;
+  font-family: Verdana, sans-serif;
 }
 
 .leftContent{
@@ -40,4 +41,12 @@
   border-radius: 20px;
   color: #3690ED;
   border: 1px solid white;
+}
+
+.rightTittle h1{
+  font-size: 70px;
+}
+
+.rightTittle h3{
+  font-size: 30px;
 }

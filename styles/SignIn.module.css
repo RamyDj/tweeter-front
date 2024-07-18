@@ -1,10 +1,10 @@
-.modalSignUp {
+.modalSignIn {
     position: fixed;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 32%;
-    height: 52%;
+    height: 40%;
     background-color: rgb(28, 27, 27);
     border: none;
     border-radius: 8px;
@@ -12,10 +12,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: Verdana, sans-serif;
   }
   
-  .SignUpCloseButton {
+  .SignInCloseButton {
     position: absolute;
     font-size: 20px;
     top: 10px;
@@ -39,7 +38,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 200px;
+    height: 140px;
     width: 220px;
 }
 
@@ -55,8 +54,8 @@
 .modalButton {
     padding: 10px;
     border: none;
+    font-family: Verdana, sans-serif;
     font-weight: 600;
     border-radius: 35px;
     cursor: pointer;
 }
-
