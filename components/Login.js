@@ -1,6 +1,6 @@
 import styles from '../styles/Home.module.css';
 
-function Home() {
+function Login() {
   return (
     <div>
       <main className={styles.main}>
@@ -12,4 +12,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Login;
