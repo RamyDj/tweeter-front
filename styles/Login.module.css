@@ -42,3 +42,11 @@
   color: #3690ED;
   border: 1px solid white;
 }
+
+.rightTittle h1{
+  font-size: 70px;
+}
+
+.rightTittle h3{
+  font-size: 30px;
+}
