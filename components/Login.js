@@ -1,6 +1,7 @@
 import styles from '../styles/Login.module.css';
 import { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
+import Image from "next/image";
 
 function Login() {
   const [SignInModal, setSignInModal] = useState(false);
@@ -8,30 +9,48 @@ function Login() {
 
   const router = useRouter();
 
-  const opensignUpModal = () => {
+  const openSignUpModal = () => {
     setSignUpModal(true);
     setSignInModal(false)
   };
 
-  const closesignUpModal = () => {
+  const closeSignUpModal = () => {
     setSignUpModal(false);
   };
 
-  const opensignInModal = () => {
+  const openSignInModal = () => {
     setSignUpModal(false);
     setSignInModal(true)
   };
 
-  const closesignInModal = () => {
+  const closeSignInModal = () => {
     setSignInModal(false)
   };
   return (
-    <div>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-      </main>
+   <div className={styles.mainLoginPage}>
+
+        <div className={styles.leftContent}>
+            <div className={styles.logoContainer}>
+            <Image src="/logoTwitterBlanc.png" alt="Logo Twitter" width={400} height={300}/>
+            </div>
+        </div>
+
+        <div className={styles.rightContent}>
+            <div className={styles.rightLogo}>
+                <Image src="/logoTwitterBlanc.png" alt="Logo Twitter" width={60} height={50}/>
+            </div>
+            <div className={styles.rightTittle}>
+                <h1>See what's <br />
+                    happening</h1>
+                <h3>Join Hackatweet today.</h3>
+            </div>
+            <div className={styles.rightBtn}>
+                <button  className={styles.BtnUp} onClick={openSignUpModal}>Sign Up</button>
+                <p>Already have an account?</p>
+                <button className={styles.BtnIn} onClick={openSignInModal}>Sign In</button>
+            </div>
+        
+        </div>
     </div>
   );
 }

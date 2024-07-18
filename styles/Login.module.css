@@ -1,22 +1,43 @@
-.main {
+.mainLoginPage{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  background-color: #151D26;
+  color: white;
+}
+
+.leftContent{
+  width: 40%;
+  background-image: url('/background_gauche_loginTwitter.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 4rem 0;
 }
 
-.title {
-  line-height: 1.15;
-  font-size: 4rem;
+.rightContent{
+  margin: 30px;
+  height: 100vh;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.rightTittle{
+  margin-top: 90px;
 }
 
-.title a:hover, .title a:focus, .title a:active {
-  text-decoration: underline;
+.BtnUp{
+  background-color: #3690ED;
+  padding: 10px 90px 10px 90px;
+  border-radius: 20px;
+  color: white;
+  border: none;
+}
+
+.BtnIn{
+  background-color: #3691ed00;
+  padding: 10px 90px 10px 90px;
+  border-radius: 20px;
+  color: #3690ED;
+  border: 1px solid white;
 }
