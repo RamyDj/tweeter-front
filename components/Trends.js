@@ -7,7 +7,7 @@ import {setHashtagList} from '../reducers/hashtags'
 function Trends(props) {
     const [hashtags, setHashtags] = useState([]);
     const router = useRouter()
-
+    const dispatch = useDispatch()
     useEffect(() => {
         if (props.tweets.length > 0) {
             const allHashtags = props.tweets.map(tweet => tweet.hashtag);
@@ -29,7 +29,7 @@ function Trends(props) {
         fetch('http://localhost:3000/tweet/getByHashtag', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({hashtag: hashtag })
+            body: JSON.stringify({hashtag: hashtag})
             })
             .then(response=> response.json())
             .then(datas=> {

@@ -13,9 +13,11 @@ border-radius: 15px;
 .hashtag{
     color : white;
     padding: 15px;
+    font-weight: 700;
     
 }
 
 .tweetCount{
     color: #6E7682;
+    font-weight: 100;
 }
