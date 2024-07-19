@@ -8,6 +8,7 @@ function Trends(props) {
     const [hashtags, setHashtags] = useState([]);
     const router = useRouter()
     const dispatch = useDispatch()
+    
     useEffect(() => {
         if (props.tweets.length > 0) {
             const allHashtags = props.tweets.map(tweet => tweet.hashtag);

@@ -12,7 +12,7 @@ function Hashtag (){
     const [tweets, setTweets] = useState([]);
     
     useEffect(() => {
-        fetch('http://localhost:3000/tweet') //a modifier avec route hashtag
+        fetch('http://localhost:3000/tweet') //a modifier avec route hasfrjffnjerfneir
             .then(response => response.json())
             .then(data => {console.log(data);
                 setTweets(data.allTweet); 
