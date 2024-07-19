@@ -4,7 +4,7 @@ import Tweet from './Tweet'
 import LastTweets from './LastTweets'
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+import Trends from './Trends';
 
 function Home (){
     const [tweets, setTweets] = useState([]);
