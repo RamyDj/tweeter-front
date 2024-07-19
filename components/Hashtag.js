@@ -1,4 +1,4 @@
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Hashtag.module.css'
 import Image from 'next/image'
 import Tweet from './Tweet'
 import LastTweets from './LastTweets'
@@ -9,16 +9,25 @@ import { useRouter } from 'next/router';
 
 
 function Hashtag (){
-    const [tweets, setTweets] = useState([]);
-    
-    useEffect(() => {
-        fetch('http://localhost:3000/tweet') //a modifier avec route hasfrjffnjerfneir
+    let tweetToDisplay = useSelector((state)=>state.hashtags.value.datas.data)
+    console.log(tweetToDisplay)
+    let tweetsMapped = tweetToDisplay.map((e,i)=>{
+        return <LastTweets {...e} key={i}/>
+    })
+let currentHashtag = useSelector((state)=>state.hashtags.value.hashtag)
+
+const [tweets, setTweets] = useState([])
+
+useEffect(()=>{
+    const fetchTweets = () => {
+        fetch('http://localhost:3000/tweet')
             .then(response => response.json())
-            .then(data => {console.log(data);
-                setTweets(data.allTweet); 
-                
+            .then(data => {
+                setTweets(data.allTweet);
             })
-    }, []);
+           
+    }
+}, [])
 
 return(    
 <div className={styles.body}>
@@ -35,23 +44,20 @@ return(
     </div>
     <div className={styles.centralContainer}>
         <div className={styles.tweetContainer}>
-            <h2 className={styles.title}>#hashtag</h2>
-            <Tweet />
+            <h2 className={styles.title}>Hashtag</h2>
+            <div className={styles.inputContainer}>
+                <input type="text" className={styles.input} placeholder={currentHashtag}/>
+            </div>
         </div>
         <div className={styles.lastTweetsContainer}>
-        <ul>
-                {tweets.map(tweet => (
-                    <li key={tweet._id}>
-                        <strong>{tweet.username}</strong>: {tweet.message}
-                    </li>
-                ))}
-            </ul>
+            {tweetsMapped}
         </div>
     </div>
     <div className={styles.rightContainer}>
         <h2 className={styles.title}>Trends</h2>
         <div className={styles.TrendsContainer}>
-            <Trends tweets={tweets} />
+        <Trends tweets={tweets} /> 
+          
         </div>
     </div>
 

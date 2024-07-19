@@ -1,0 +1,123 @@
+.body{
+    background-color: rgb(23	32	42	);
+    height : 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+.leftContainer{
+    width: 20vw;
+    height : 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2vw;
+}
+
+.tweeterLogoContainer{
+    position: relative;
+    width: 3vw;
+    height: 3vw;
+    
+}
+
+.userLogoContainer{
+    position: relative;
+    width: 3vw;
+    height: 3vw;
+    
+}
+
+.userLogo{
+    border-radius: 50%;
+}
+
+.centralContainer{
+    width: 50vw;
+    height: 100vh;
+    border-right: 1px solid rgb(63	70	80	);
+    border-left: 1px solid rgb(63	70	80	);
+    display: flex;
+    flex-direction: column;
+ 
+}
+
+.tweetContainer{
+    height: 20vh;
+    width: 100%;
+}
+
+.inputContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.input{
+    width: 80%;
+    border : transparent;
+    height: 4vh;
+    background-color: rgb(63	70	80	);
+    border-radius: 3vw;
+    font-size: 130%;
+    padding-left: 3%;
+}
+
+.title{
+    color :white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin : 0;
+    padding: 2vw;
+  
+}
+
+.lastTweetsContainer{
+    height: 80vh;
+    width: 100%;
+    overflow-Y: scroll;
+    scrollbar-width: none;
+    margin-top: 30px;
+}
+
+.rightContainer{
+    width: 30vw;
+    height: 100vh;
+}
+
+.userContainer{
+    display: flex;
+    flex-direction: column;
+}
+.userInfosContainer{
+    display: flex;
+}
+
+.userDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 20px;
+    font-size: large;
+    color: white;
+}
+
+.firstname {
+    font-weight: 700;
+}
+
+.username{
+    color: #6E7682;
+}
+
+.logButton{
+    background-color: black;
+    padding: 10px 30px 10px 30px;
+    border-radius: 20px;
+    color: white;
+    border: 1px solid white;
+}
+
+.logout{
+    margin-top: 20px;
+}
