@@ -1,15 +1,16 @@
 import styles from '../styles/Tweets.module.css'
 import {useState} from 'react'
 
-function Tweet () {
+function Tweet (props) {
 
     const [tweetTypped, setTweetTyped] = useState('')
 
     const tweetClick = () => {
+       
         fetch('http://localhost:3000/tweet/newTweet',{
             method : 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({message : tweetTypped})
+            body: JSON.stringify({message : tweetTypped, username : props.username, firstname : props.firstname})
         })
         .then(response=>response.json())
         .then(data => console.log(data))
