@@ -8,6 +8,7 @@ import moment from 'moment';
 
 function LastTweets({ _id, firstname, username, message, createdAt, likedBy, onTweetDeleted }) {
     const userId = useSelector((state) => state.user.value.userId);
+    const usernameu = useSelector((state) => state.user.value.username);
     const [liked, setLiked] = useState(likedBy.includes(userId));
     const formattedDate = moment(createdAt).fromNow();
 
@@ -41,14 +42,18 @@ function LastTweets({ _id, firstname, username, message, createdAt, likedBy, onT
 
     const handleDelete = () => {
         fetch(`http://localhost:3000/tweet/deleteTweet/${_id}`, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userId })
         })
         .then(response => response.json())
         .then(result => {
-            
+            if (result) {
                 if (onTweetDeleted) onTweetDeleted();
-                alert('Tweet deleted successfully');
+                console.log(result);
+            }
             
+                
         })
         
     };
