@@ -7,7 +7,6 @@ import {setHashtagList} from '../reducers/hashtags'
 function Trends(props) {
     const [hashtags, setHashtags] = useState([]);
     const router = useRouter()
-    const dispatch = useDispatch()
 
     useEffect(() => {
         if (props.tweets.length > 0) {
