@@ -59,6 +59,9 @@
 .lastTweetsContainer{
     height: 80vh;
     width: 100%;
+    overflow-Y: scroll;
+    scrollbar-width: none;
+
 }
 
 .rightContainer{

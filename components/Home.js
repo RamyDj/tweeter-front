@@ -8,7 +8,8 @@ import Trends from './Trends';
 
 function Home (){
     const [tweets, setTweets] = useState([]);
-    
+    const user = useSelector((state) => state.user.value);
+    console.log(user);
     useEffect(() => {
         fetch('http://localhost:3000/tweet')
             .then(response => response.json())
@@ -28,6 +29,10 @@ return(
             <div className={styles.userLogoContainer}>
                 <Image src='/egg.jpg' alt='User logo' layout='fill' className={styles.userLogo}/>
             </div>
+            <div className={styles.userDetails}>
+                        <p>{user.firstname}</p>
+                        <p>@{user.username}</p>
+                    </div>
         </div>
         
     </div>
@@ -41,8 +46,8 @@ return(
                 {tweets.map(tweet => (
                      <LastTweets 
                      key={tweet._id}
-                     firstname={tweet.firstname}
-                     username={tweet.username}
+                     firstname={user.firstname}
+                     username={user.username}
                      message={tweet.message}
                      createdAt={new Date(tweet.createdAt).toLocaleString()}
                  />
@@ -52,9 +57,9 @@ return(
     </div>
     <div className={styles.rightContainer}>
         <h2 className={styles.title}>Trends</h2>
-       {/* <div TrendsContainer>
+       <div TrendsContainer>
 
-        </div> */}
+        </div>
     </div>
 
 </div>
