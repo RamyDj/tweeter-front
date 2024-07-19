@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import styles from '../styles/Trends.module.css'
-import {useDispatch, useSelector} from 'react-redux'
+import {useDispatch } from 'react-redux'
 import {setHashtagList} from '../reducers/hashtags'
 
 function Trends(props) {
@@ -24,9 +24,9 @@ function Trends(props) {
         }
     }, [props.tweets]);
 
-    const hashtagsReducer = useSelector((state)=>state.hashtags.value)
 
     const hashtagClick = (hashtag)=> {
+        console.log(hashtag)
         fetch('http://localhost:3000/tweet/getByHashtag', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -34,21 +34,15 @@ function Trends(props) {
             })
             .then(response=> response.json())
             .then(datas=> {
-            dispatch(setHashtags(datas));
+            dispatch(setHashtagList(datas));
+            router.push("/hashtag");
             })
     }
-    console.log(hashtags)
-    //console.log(hashtagsReducer)
+    //console.log(hashtags)
 
     const hashtagView = hashtags.map((hashtag, i) => (
-        <li key={i} onClick={()=>hashtagClick('#test')}>{hashtag}</li>
+        <li key={i} onClick={()=>hashtagClick(hashtag)}>{hashtag}</li>
     ));
-
-    //onClick={()=>hashtagClick(hashtag)}
-
-    const handleClickToHashtag = () =>{
-        router.push("/hashtag")
-    }
     
 //A faire => nombre de tweet par hashtag
 
