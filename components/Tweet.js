@@ -6,7 +6,7 @@ function Tweet (props) {
     const [tweetTypped, setTweetTyped] = useState('')
 
     const tweetClick = () => {
-       
+        console.log('hello')
         fetch('http://localhost:3000/tweet/newTweet',{
             method : 'POST',
             headers: { 'Content-Type': 'application/json' },
