@@ -39,18 +39,22 @@ return(
         <div className={styles.lastTweetsContainer}>
         <ul>
                 {tweets.map(tweet => (
-                    <li key={tweet._id}>
-                        <strong>{tweet.username}</strong>: {tweet.message}
-                    </li>
+                     <LastTweets 
+                     key={tweet._id}
+                     firstname={tweet.firstname}
+                     username={tweet.username}
+                     message={tweet.message}
+                     createdAt={new Date(tweet.createdAt).toLocaleString()}
+                 />
                 ))}
             </ul>
         </div>
     </div>
     <div className={styles.rightContainer}>
         <h2 className={styles.title}>Trends</h2>
-        <div TrendsContainer>
+       {/* <div TrendsContainer>
 
-        </div>
+        </div> */}
     </div>
 
 </div>
