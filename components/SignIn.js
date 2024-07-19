@@ -23,7 +23,7 @@ function SignIn(props) {
             .then(response => response.json())
             .then(data => {
                 if (data.result) {
-                    dispatch(login({ username: signInUsername, token: data.token, firstname: data.firstname }))
+                    dispatch(login({ username: signInUsername, token: data.token, firstname: data.firstname, userId: data.userId }))
                     setSignInUsername('');
                     setSignInPassword('');
                     router.push("/home")
