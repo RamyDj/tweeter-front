@@ -39,7 +39,9 @@ return(
     <div className={styles.centralContainer}>
         <div className={styles.tweetContainer}>
             <h2 className={styles.title}>Home</h2>
-            <Tweet />
+            <Tweet 
+            username={user.username}
+            firstname={user.firstname} />
         </div>
         <div className={styles.lastTweetsContainer}>
         <ul>
