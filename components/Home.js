@@ -12,8 +12,9 @@ function Home (){
     useEffect(() => {
         fetch('http://localhost:3000/tweet')
             .then(response => response.json())
-            .then(data => {
-                setTweets(data); 
+            .then(data => {console.log(data);
+                setTweets(data.allTweet); 
+                
             })
     }, []);
 
@@ -37,7 +38,11 @@ return(
         </div>
         <div className={styles.lastTweetsContainer}>
         <ul>
-              
+                {tweets.map(tweet => (
+                    <li key={tweet._id}>
+                        <strong>{tweet.username}</strong>: {tweet.message}
+                    </li>
+                ))}
             </ul>
         </div>
     </div>
