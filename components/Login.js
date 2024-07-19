@@ -9,7 +9,7 @@ function Login() {
   const [SignInModal, setSignInModal] = useState(false);
   const [SignUpModal, setSignUpModal] = useState(false);
 
-  const router = useRouter();
+  
 
   const openSignUpModal = () => {
     setSignUpModal(true);
