@@ -5,20 +5,28 @@ import LastTweets from './LastTweets'
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Trends from './Trends';
+import { useRouter } from "next/router";
 
 function Home (){
+    const router = useRouter()
     const [tweets, setTweets] = useState([]);
     const user = useSelector((state) => state.user.value);
     console.log(user);
+
     useEffect(() => {
+        if (!user.token) {
+            router.push("/");
+        }
+    
         fetch('http://localhost:3000/tweet')
             .then(response => response.json())
             .then(data => {
                 setTweets(data.allTweet); 
                 
             })
-    }, []);
+    }, [router]);
 
+    
 return(    
 <div className={styles.body}>
     <div className={styles.leftContainer}>
@@ -48,8 +56,8 @@ return(
                 {tweets.map(tweet => (
                      <LastTweets 
                      key={tweet._id}
-                     firstname={user.firstname}
-                     username={user.username}
+                     firstname={tweet.firstname}
+                     username={tweet.username}
                      message={tweet.message}
                      createdAt={new Date(tweet.createdAt).toLocaleString()}
                  />

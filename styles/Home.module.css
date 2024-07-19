@@ -61,7 +61,7 @@
     width: 100%;
     overflow-Y: scroll;
     scrollbar-width: none;
-
+    margin-top: 30px;
 }
 
 .rightContainer{
