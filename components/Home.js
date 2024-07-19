@@ -13,7 +13,7 @@ function Home (){
     useEffect(() => {
         fetch('http://localhost:3000/tweet')
             .then(response => response.json())
-            .then(data => {console.log(data);
+            .then(data => {
                 setTweets(data.allTweet); 
                 
             })
@@ -58,7 +58,7 @@ return(
     <div className={styles.rightContainer}>
         <h2 className={styles.title}>Trends</h2>
        <div TrendsContainer>
-
+       <Trends tweets={tweets} /> 
         </div>
     </div>
 
