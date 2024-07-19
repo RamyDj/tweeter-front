@@ -10,7 +10,7 @@ function Login() {
   const [SignUpModal, setSignUpModal] = useState(false);
 
   
-
+// utilisation de modal pour afficher au click les champs pour s'inscrire ou se connecter
   const openSignUpModal = () => {
     setSignUpModal(true);
     setSignInModal(false)

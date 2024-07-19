@@ -69,3 +69,39 @@
     height: 100vh;
 }
 
+.userContainer{
+    display: flex;
+    flex-direction: column;
+}
+.userInfosContainer{
+    display: flex;
+}
+
+.userDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 20px;
+    font-size: large;
+    color: white;
+}
+
+.firstname {
+    font-weight: 700;
+}
+
+.username{
+    color: #6E7682;
+}
+
+.logButton{
+    background-color: black;
+    padding: 10px 30px 10px 30px;
+    border-radius: 20px;
+    color: white;
+    border: 1px solid white;
+}
+
+.logout{
+    margin-top: 20px;
+}

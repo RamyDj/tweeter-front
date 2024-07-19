@@ -10,7 +10,7 @@ function SignIn(props) {
     const router = useRouter()
     const [signInUsername, setSignInUsername] = useState("");
     const [signInPassword, setSignInPassword] = useState("");
-
+//connection avec recuperation de token et firstname
     const handleConnection = () => {
         fetch('http://localhost:3000/users/signin', {
             method: 'POST',

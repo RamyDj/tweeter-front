@@ -6,13 +6,17 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Trends from './Trends';
 import { useRouter } from "next/router";
+import { logout } from "../reducers/user";
 
 function Home (){
+
+    
+    const dispatch = useDispatch();
     const router = useRouter()
     const [tweets, setTweets] = useState([]);
     const user = useSelector((state) => state.user.value);
     console.log(user);
-
+// affichage des tweet de la bdd et une restriction si pas token renvoi a login
     useEffect(() => {
         if (!user.token) {
             router.push("/");
@@ -26,22 +30,33 @@ function Home (){
             })
     }, [router]);
 
-    
+    const handleLogout = () => {
+        dispatch(logout());
+        router.push("/");
+    };
+
 return(    
 <div className={styles.body}>
     <div className={styles.leftContainer}>
         <div className={styles.tweeterLogoContainer}>
             <Image src='/logo.png' alt='Logo Twitter' layout='fill'/>
         </div>
+        <div className={styles.userContainer}>
         <div className={styles.userInfosContainer}>
             <div className={styles.userLogoContainer}>
                 <Image src='/egg.jpg' alt='User logo' layout='fill' className={styles.userLogo}/>
             </div>
             <div className={styles.userDetails}>
-                        <p>{user.firstname}</p>
-                        <p>@{user.username}</p>
+                        <p className={styles.firstname}>{user.firstname}</p>
+                        <p className={styles.username}>@{user.username}</p>
                     </div>
+                    </div>
+                    <div className={styles.logout}>
+        <button className={styles.logButton} onClick={()=>handleLogout()}>Logout</button>
         </div>
+        
+        </div>
+       
         
     </div>
     <div className={styles.centralContainer}>
@@ -59,7 +74,7 @@ return(
                      firstname={tweet.firstname}
                      username={tweet.username}
                      message={tweet.message}
-                     createdAt={new Date(tweet.createdAt).toLocaleString()}
+                     createdAt={tweet.createdAt}
                  />
                 ))}
             </ul>

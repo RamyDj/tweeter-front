@@ -13,7 +13,7 @@ function SignUp(props) {
     const [signUpPassword, setSignUpPassword] = useState("");
     const [signUpFirstname, setSignUpFirstName] = useState("");
 
-
+//inscription et connexion auto avec une recuperation de token et firstname
     const handleRegister = () => {
 
         fetch('http://localhost:3000/users/signup', {
