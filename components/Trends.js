@@ -21,9 +21,9 @@ function Trends(props) {
             const filteredHashtags = uniqueHashtags.filter(hashtag => hashtag !== null);
 
             setHashtags(filteredHashtags);
+           
         }
     }, [props.tweets]);
-
 
     const hashtagClick = (hashtag)=> {
         console.log(hashtag)
@@ -34,22 +34,25 @@ function Trends(props) {
             })
             .then(response=> response.json())
             .then(datas=> {
-            dispatch(setHashtagList(datas));
+            dispatch(setHashtagList({hashtag: hashtag, datas}));
             router.push("/hashtag");
             })
     }
-    //console.log(hashtags)
 
-    const hashtagView = hashtags.map((hashtag, i) => (
-        <li key={i} onClick={()=>hashtagClick(hashtag)}>{hashtag}</li>
-    ));
+    const hashtagView = hashtags.map((hashtag, i) => {
+        const tweetCount = props.tweets.filter(tweet => tweet.hashtag.includes(hashtag)).length;
+        return (
+            <span key={i} onClick={() => hashtagClick(hashtag)} className={styles.hashtag}>
+                {hashtag} 
+                <div className={styles.tweetCount}>{tweetCount} tweets</div>
+            </span>
+        );
+    });
     
-//A faire => nombre de tweet par hashtag
-
     return (
         <div>
-            <div className={styles.hashtags}>{hashtagView}
-                <span>Nb Tweets</span> 
+            <div>
+                <div className={styles.trends}>{hashtagView}</div>
             </div>
         </div>
     );

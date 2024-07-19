@@ -1,3 +1,21 @@
-.hashtags{
+.trends{
+width: auto;
+height: auto;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+background-color: blue;
+padding: 20px;
+margin: 20px;
+border-radius: 15px;
+    
+}
+.hashtag{
     color : white;
+    padding: 15px;
+    
+}
+
+.tweetCount{
+    color: #6E7682;
 }
