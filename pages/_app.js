@@ -6,9 +6,10 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import user from '../reducers/user'
 import likeTweets from '../reducers/likeTweets'
+import hashtags from '../reducers/hashtags'
 
 const store = configureStore({
-  reducer: { user, likeTweets},
+  reducer: { user, likeTweets, hashtags},
 });
 
 function App({ Component, pageProps }) {
