@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import styles from '../styles/Trends.module.css'
 
 function Trends(props) {
     const [hashtags, setHashtags] = useState([]);
@@ -24,7 +25,7 @@ function Trends(props) {
     console.log(props.tweets)
 
     const hashtagView = hashtags.map((hashtag, i) => (
-        <li key={i}>{hashtag}</li>
+        <li key={i} >{hashtag}</li>
     ));
 
 
@@ -36,7 +37,7 @@ function Trends(props) {
 
     return (
         <div onClick={() => handleClickToHashtag()}>
-            <div>{hashtagView}
+            <div className={styles.hashtags}>{hashtagView}
                 <span>Nb Tweets</span> 
             </div>
         </div>
